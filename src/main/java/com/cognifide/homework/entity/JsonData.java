@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 
-public class JsonData {
+public  * JsonData {
     public JsonData() throws IOException {
     }
 

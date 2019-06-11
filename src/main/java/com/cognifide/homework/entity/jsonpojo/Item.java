@@ -1,10 +1,11 @@
 
 package com.cognifide.homework.entity.jsonpojo;
 
-import javax.validation.Valid;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+import javax.validation.Valid;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -120,4 +121,17 @@ public class Item {
         this.searchInfo = searchInfo;
     }
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "kind='" + kind + '\'' +
+                ", id='" + id + '\'' +
+                ", etag='" + etag + '\'' +
+                ", selfLink='" + selfLink + '\'' +
+                ", volumeInfo=" + volumeInfo +
+                ", saleInfo=" + saleInfo +
+                ", accessInfo=" + accessInfo +
+                ", searchInfo=" + searchInfo +
+                '}';
+    }
 }
