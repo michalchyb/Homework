@@ -2,8 +2,6 @@ package com.cognifide.homework.controller;
 
 import com.cognifide.homework.entity.jsonpojo.Item;
 import com.cognifide.homework.service.BookService;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
@@ -11,15 +9,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/")
 public class BookController {
 
-    private BookService bookService;
+    private BookService service;
 
-    public BookController(BookService bookService) {
-        this.bookService = bookService;
+    public BookController(BookService service) {
+        this.service = service;
     }
 
     @GetMapping("book/{isbn}")
-    public ResponseEntity<Item> getBook(@PathVariable String isbn) {
-        return new ResponseEntity<>(bookService.findBookByISBN(isbn), HttpStatus.OK);
+    public Item getBook(@PathVariable String isbn) {
+        return service.findBookByISBN(isbn);
     }
 
 }
