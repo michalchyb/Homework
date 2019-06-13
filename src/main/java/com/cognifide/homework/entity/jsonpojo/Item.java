@@ -9,14 +9,14 @@ import javax.validation.Valid;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "kind",
-    "id",
-    "etag",
-    "selfLink",
-    "volumeInfo",
-    "saleInfo",
-    "accessInfo",
-    "searchInfo"
+        "kind",
+        "id",
+        "etag",
+        "selfLink",
+        "volumeInfo",
+        "saleInfo",
+        "accessInfo",
+        "searchInfo"
 })
 public class Item {
 

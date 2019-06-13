@@ -9,9 +9,9 @@ import javax.validation.Valid;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "finskyOfferType",
-    "listPrice",
-    "retailPrice"
+        "finskyOfferType",
+        "listPrice",
+        "retailPrice"
 })
 public class Offer {
 

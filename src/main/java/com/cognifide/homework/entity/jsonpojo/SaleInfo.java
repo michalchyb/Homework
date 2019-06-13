@@ -1,21 +1,22 @@
 
 package com.cognifide.homework.entity.jsonpojo;
 
-import java.util.List;
-import javax.validation.Valid;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import javax.validation.Valid;
+import java.util.List;
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "country",
-    "saleability",
-    "isEbook",
-    "buyLink",
-    "listPrice",
-    "retailPrice",
-    "offers"
+        "country",
+        "saleability",
+        "isEbook",
+        "buyLink",
+        "listPrice",
+        "retailPrice",
+        "offers"
 })
 public class SaleInfo {
 

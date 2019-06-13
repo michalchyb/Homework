@@ -17,13 +17,14 @@ public class Helpers {
     public static Book getJsonFromFile() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(new File(Objects.requireNonNull(Helpers.class.getClassLoader().getResource("books.json")).getFile()), Book.class);
-
     }
 
 
     public static BookDTO getBookDTO(Item item) {
+
         BookDTO bookDTO = new BookDTO();
-        bookDTO.setIsbn(item.getVolumeInfo().getIndustryIdentifiers().get(0).getIdentifier());
+
+        setCorrectIsbn(item, bookDTO);
         bookDTO.setTitle(item.getVolumeInfo().getTitle());
         bookDTO.setSubtitle(item.getVolumeInfo().getSubtitle());
         bookDTO.setPublisher(item.getVolumeInfo().getPublisher());
@@ -33,9 +34,31 @@ public class Helpers {
         bookDTO.setThumbnailUrl(item.getVolumeInfo().getImageLinks().getThumbnail());
         bookDTO.setLanguage(item.getVolumeInfo().getLanguage());
         bookDTO.setPreviewLink(item.getVolumeInfo().getPreviewLink());
-        bookDTO.setAverageRating(item.getVolumeInfo().getAverageRating());
+        setCorrectAverageRating(item, bookDTO);
         bookDTO.setAuthors(item.getVolumeInfo().getAuthors());
         bookDTO.setCategories(item.getVolumeInfo().getCategories());
         return bookDTO;
+    }
+
+    private static void setCorrectAverageRating(Item item, BookDTO bookDTO) {
+        if (item.getVolumeInfo().getAverageRating() != null) {
+            bookDTO.setAverageRating(item.getVolumeInfo().getAverageRating());
+        } else {
+            bookDTO.setAverageRating(0.0);
+        }
+    }
+
+    private static void setCorrectIsbn(Item item, BookDTO bookDTO) {
+        if (item.getVolumeInfo().getIndustryIdentifiers().toString().contains("ISBN_13")) {
+
+            if (item.getVolumeInfo().getIndustryIdentifiers().get(0).getType().contains("ISBN_13")) {
+                bookDTO.setIsbn(item.getVolumeInfo().getIndustryIdentifiers().get(0).getIdentifier());
+            } else {
+                bookDTO.setIsbn(item.getVolumeInfo().getIndustryIdentifiers().get(1).getIdentifier());
+            }
+        } else {
+
+            bookDTO.setIsbn(item.getId());
+        }
     }
 }

@@ -7,8 +7,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "text",
-    "image"
+        "text",
+        "image"
 })
 public class ReadingModes {
 

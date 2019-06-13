@@ -17,12 +17,12 @@ public class BookService {
     public BookService() throws IOException {
     }
 
-
     public BookDTO findBookByISBN(String isbn) {
         for (Item item : listOfItems) {
-            if (item.getVolumeInfo().getIndustryIdentifiers().get(0).getIdentifier().equals(isbn)) {
+
+            if (item.getVolumeInfo().getIndustryIdentifiers().toString().contains(isbn)) {
                 return getBookDTO(item);
-            }
+}
         }
         return null;
     }

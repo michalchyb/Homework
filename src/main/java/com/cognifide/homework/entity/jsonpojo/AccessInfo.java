@@ -10,16 +10,16 @@ import javax.validation.Valid;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "country",
-    "viewability",
-    "embeddable",
-    "publicDomain",
-    "textToSpeechPermission",
-    "epub",
-    "pdf",
-    "webReaderLink",
-    "accessViewStatus",
-    "quoteSharingAllowed"
+        "country",
+        "viewability",
+        "embeddable",
+        "publicDomain",
+        "textToSpeechPermission",
+        "epub",
+        "pdf",
+        "webReaderLink",
+        "accessViewStatus",
+        "quoteSharingAllowed"
 })
 public class AccessInfo {
 

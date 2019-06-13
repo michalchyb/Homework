@@ -10,8 +10,8 @@ import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "requestedUrl",
-    "items"
+        "requestedUrl",
+        "items"
 })
 public class Book {
 

@@ -22,7 +22,6 @@ public class RatingController {
 
     @GetMapping("rating")
     public List<RatingDTO> getAuthorsRating() {
-
         return service.authorsRating();
     }
 }
