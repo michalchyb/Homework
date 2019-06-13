@@ -1,5 +1,6 @@
 package com.cognifide.homework.controller;
 
+import com.cognifide.homework.entity.RatingDTO;
 import com.cognifide.homework.service.RatingService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,9 +21,8 @@ public class RatingController {
     }
 
     @GetMapping("rating")
-    public List<String> getAuthorsRating() {
+    public List<RatingDTO> getAuthorsRating() {
 
         return service.authorsRating();
     }
-
 }

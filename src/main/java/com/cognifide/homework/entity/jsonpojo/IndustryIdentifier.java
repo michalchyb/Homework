@@ -32,6 +32,14 @@ public class IndustryIdentifier {
         return identifier;
     }
 
+    @Override
+    public String toString() {
+        return "IndustryIdentifier{" +
+                "type='" + type + '\'' +
+                ", identifier='" + identifier + '\'' +
+                '}';
+    }
+
     @JsonProperty("identifier")
     public void setIdentifier(String identifier) {
         this.identifier = identifier;

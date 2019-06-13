@@ -1,6 +1,6 @@
 package com.cognifide.homework.controller;
 
-import com.cognifide.homework.entity.jsonpojo.Item;
+import com.cognifide.homework.entity.BookDTO;
 import com.cognifide.homework.service.CategoryService;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +18,7 @@ public class CategoryController {
     }
 
     @GetMapping("category/{category}")
-    public List<Item> getBooksByCategory(@PathVariable String category) {
+    public List<BookDTO> getBooksByCategory(@PathVariable String category) {
         return service.findBooksByCategory(category);
     }
 

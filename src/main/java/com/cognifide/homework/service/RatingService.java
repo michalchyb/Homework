@@ -1,11 +1,13 @@
 package com.cognifide.homework.service;
 
+import com.cognifide.homework.entity.RatingDTO;
 import com.cognifide.homework.entity.jsonpojo.Item;
 import com.cognifide.homework.utils.Helpers;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -17,18 +19,17 @@ public class RatingService {
     public RatingService() throws IOException {
     }
 
-    public List<String> authorsRating() {
-        List<String> result = new LinkedList<>();
+    public List<RatingDTO> authorsRating() {
+        List<RatingDTO> result = new ArrayList<>();
         for (Item item : listOfItems) {
-
-
             if (item.getVolumeInfo().getAuthors() != null && item.getVolumeInfo().getAverageRating() != null) {
-
-                String tempAuthor = item.getVolumeInfo().getAuthors().toString().replace("[","").replace("]","");
-//                double tempAvgRating = Float.parseFloat(item.getVolumeInfo().getAverageRating());
-                result.add(tempAuthor + item.getVolumeInfo().getAverageRating());
+                RatingDTO ratingDTO = new RatingDTO();
+                ratingDTO.setAuthors(item.getVolumeInfo().getAuthors());
+                ratingDTO.setAverageRating(item.getVolumeInfo().getAverageRating());
+                result.add(ratingDTO);
             }
         }
+        Collections.sort(result, Collections.reverseOrder());
         return result;
     }
 }

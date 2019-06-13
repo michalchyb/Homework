@@ -1,10 +1,13 @@
 package com.cognifide.homework.service;
 
+import com.cognifide.homework.entity.BookDTO;
 import com.cognifide.homework.entity.jsonpojo.Item;
 import com.cognifide.homework.utils.Helpers;
 
 import java.io.IOException;
 import java.util.List;
+
+import static com.cognifide.homework.utils.Helpers.getBookDTO;
 
 @org.springframework.stereotype.Service
 public class BookService {
@@ -15,10 +18,11 @@ public class BookService {
     }
 
 
-    public Item findBookByISBN(String isbn) {
+    public BookDTO findBookByISBN(String isbn) {
         for (Item item : listOfItems) {
             if (item.getVolumeInfo().getIndustryIdentifiers().get(0).getIdentifier().equals(isbn)) {
-                return item;
+                BookDTO bookDTO = getBookDTO(item);
+                return bookDTO;
             }
         }
         return null;

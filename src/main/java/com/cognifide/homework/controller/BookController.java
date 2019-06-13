@@ -1,6 +1,6 @@
 package com.cognifide.homework.controller;
 
-import com.cognifide.homework.entity.jsonpojo.Item;
+import com.cognifide.homework.entity.BookDTO;
 import com.cognifide.homework.service.BookService;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +16,7 @@ public class BookController {
     }
 
     @GetMapping("book/{isbn}")
-    public Item getBook(@PathVariable String isbn) {
+    public BookDTO getBook(@PathVariable String isbn) {
         return service.findBookByISBN(isbn);
     }
 
