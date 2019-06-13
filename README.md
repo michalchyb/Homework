@@ -38,13 +38,6 @@ Backend will be running on
 * Endpoint for rating: http://localhost:8080/rating       
 
 
-### Running the tests
-
-If application run correct you can open new terminal window go to project /News directory and start backend tests by using 
-```bash
-mvn test
-```
-
 ### Swagger
 You can see swagger documentation under 
 
