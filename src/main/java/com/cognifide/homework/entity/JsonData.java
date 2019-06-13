@@ -7,8 +7,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class  JsonData  {
-    public JsonData()  {
-    }
 
     public Book getJsonFromFile() throws IOException {
         ObjectMapper mapper = new ObjectMapper();

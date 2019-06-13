@@ -23,13 +23,11 @@ public class CategoryService {
         List<BookDTO> result = new LinkedList<>();
         for (Item item : listOfItems) {
             if (item.getVolumeInfo().getCategories() == null) {
-            }
-            else if (item.getVolumeInfo().getCategories().contains(category)){
+            } else if (item.getVolumeInfo().getCategories().contains(category)) {
                 BookDTO bookDTO = getBookDTO(item);
 
                 result.add(bookDTO);
             }
-
         }
         return result;
     }

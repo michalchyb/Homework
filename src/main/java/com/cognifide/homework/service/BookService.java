@@ -21,8 +21,7 @@ public class BookService {
     public BookDTO findBookByISBN(String isbn) {
         for (Item item : listOfItems) {
             if (item.getVolumeInfo().getIndustryIdentifiers().get(0).getIdentifier().equals(isbn)) {
-                BookDTO bookDTO = getBookDTO(item);
-                return bookDTO;
+                return getBookDTO(item);
             }
         }
         return null;
