@@ -46,7 +46,7 @@ http://localhost:8080/swagger-ui.html#
 
 
 ### Unfortunately 
-Not everything went right. I did not have enough time to finish all task(becouse of work and other duties I did not spend the time that I wanted)
+Not everything went right. I did not have enough time to finish all task(because of work and other duties I did not spend the time that I wanted)
 - I did not cover code with test. I wanted to use RestAssured
 - Like you said in the task not always is every property present in the data set. 
   I tried to handle this wiht Json Properties like @JsonView and did not work and also tried "marshalling" but I did have that time.
