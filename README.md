@@ -34,14 +34,14 @@ mvn spring-boot:run
 ### Running
 Backend will be running on 
 * Endpoint for books: http://localhost:8080/book/{isbn}
-* Endpoint for category: http://localhost:8090/category/{Category}
+* Endpoint for category: http://localhost:8080/category/{Category}
 * Endpoint for rating: http://localhost:8080/rating       
 
 
 ### Swagger
 You can see swagger documentation under 
 
-http://localhost:8090/swagger-ui.html#
+http://localhost:8080/swagger-ui.html#
 
 
 
