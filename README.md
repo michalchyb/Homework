@@ -1,4 +1,4 @@
-# Project for Cognifide 
+# Project for Homework 
 
 ## Getting Started
 
