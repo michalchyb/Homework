@@ -1,4 +1,4 @@
-# Project for Homework 
+# Project Homework 
 
 ## Getting Started
 
